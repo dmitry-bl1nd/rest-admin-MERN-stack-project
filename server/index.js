@@ -49,6 +49,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json({extended: true}))
 app.use(cors())
 
+app.get('/', (req, res) => {
+  res.send('DB connected <a href="/get">Show data<a>')
+})
+
 
 app.get('/get', async (req, res) => {
    await emplTable.find({}, (err, result) => {

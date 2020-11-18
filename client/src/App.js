@@ -32,14 +32,14 @@ function App() {
 
   useEffect(() => {
     const fetchItems = async () => {
-      const response = await axios.get('/get')
+      const response = await axios.get('https://rest-admin.herokuapp.com/get')
       addItem(response.data)
     }
     fetchItems()
   }, [])
 
   const postData = async (name, surname, lastname, age, rank) => {
-    const data = await axios.post('/post', {
+    const data = await axios.post('https://rest-admin.herokuapp.com/post', {
       name,
       surname,
       lastname,
